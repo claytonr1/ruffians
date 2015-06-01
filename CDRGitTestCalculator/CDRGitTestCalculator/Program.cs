@@ -10,6 +10,7 @@ namespace CDRGitTestCalculator
     {
         static void Main(string[] args)
         {
+            // adding a comment
             Console.WriteLine(Add(1,3));
             Console.ReadLine();
         }
