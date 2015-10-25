@@ -10,13 +10,14 @@ namespace CDRGitTestCalculator
     {
         static void Main(string[] args)
         {
-            // adding a comment
-            Console.WriteLine(Add(1,3));
+            // adding a comment -- alpha branch
+            Console.WriteLine(Add(1,4));
             Console.ReadLine();
         }
 
         static int Add(int first, int second)
         {
+            Console.WriteLine("The answer is: ");
             return first + second;
         }
         
