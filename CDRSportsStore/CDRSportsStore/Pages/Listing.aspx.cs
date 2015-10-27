@@ -13,6 +13,7 @@ namespace CDRSportsStore.Pages
     {
 
         private Repository repo = new Repository();
+        private int pageSize = 4;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,7 +22,19 @@ namespace CDRSportsStore.Pages
 
         protected IEnumerable<Product> GetProducts()
         {
-            return repo.Products;
+            return repo.Products
+                .OrderBy(p => p.ProductID)
+                .Skip((CurrentPage - 1) * pageSize)
+                .Take(pageSize);
+        }
+
+        protected int CurrentPage
+        {
+            get
+            {
+                int page;
+                return int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+            }
         }
     }
 }
