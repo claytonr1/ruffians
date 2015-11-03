@@ -36,5 +36,13 @@ namespace CDRSportsStore.Pages
                 return int.TryParse(Request.QueryString["page"], out page) ? page : 1;
             }
         }
+
+        protected int MaxPage
+        {
+            get
+            {
+                return (int)Math.Ceiling((decimal)repo.Products.Count() / pageSize);
+            }
+        }
     }
 }
