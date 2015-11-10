@@ -32,8 +32,8 @@ namespace CDRSportsStore.Pages
         {
             get
             {
-                int page;
-                return int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+                int page = GetPageFromRequest();
+                return page > MaxPage ? MaxPage : page;
             }
         }
 
@@ -43,6 +43,13 @@ namespace CDRSportsStore.Pages
             {
                 return (int)Math.Ceiling((decimal)repo.Products.Count() / pageSize);
             }
+        }
+
+        private int GetPageFromRequest()
+        {
+            int page;
+            string reqValue = (string)RouteData.Values["page"] ?? Request.QueryString["page"];
+            return reqValue != null && int.TryParse(reqValue, out page) ? page : 1;
         }
     }
 }
