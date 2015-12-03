@@ -1,18 +1,23 @@
 ﻿body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif; margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
 }
+
 div#header div.title, div.item h3, div.item h4, div.pager a {
-    font: bold 1em 'Arial Narrow' , 'Franklin Gothic Medium' ,Arial;
+    font: bold 1em 'Arial Narrow', 'Franklin Gothic Medium',Arial;
 }
+
 div#header {
     background-color: #444;
     border-bottom: 2px solid #111;
     color: white;
 }
+
     div#header div.title {
-    font-size: 2em;
-    padding: .6em;
-}
+        font-size: 2em;
+        padding: .6em;
+    }
+
 div#content {
     border-left-width: 2px;
     border-left-color: gray;
@@ -20,11 +25,13 @@ div#content {
     margin-left: 9em;
     padding: 1em;
 }
+
 div#categories {
     float: left;
     width: 8em;
     padding: .3em;
 }
+
 div.item {
     border-top-width: 1px;
     border-top-style: dotted;
@@ -32,18 +39,22 @@ div.item {
     padding-top: .7em;
     margin-bottom: .7em;
 }
+
     div.item:first-child {
-    border-top: none;
-    padding-top: 0;
-}
+        border-top: none;
+        padding-top: 0;
+    }
+
     div.item h3 {
-    font-size: 1.3em;
-    margin: 0px 0px .25em 0px;
-}
+        font-size: 1.3em;
+        margin: 0px 0px .25em 0px;
+    }
+
     div.item h4 {
-    font-size: 1.1em;
-    margin: .4em 0px 0px 0px;
-}
+        font-size: 1.1em;
+        margin: .4em 0px 0px 0px;
+    }
+
 div.pager {
     text-align: right;
     border-style: solid;
@@ -52,16 +63,31 @@ div.pager {
     padding: .5em 0px 0px 0px;
     margin-top: 1em;
 }
+
     div.pager a {
-    font-size: 1.1em;
-    color: #666;
-    text-decoration: none;
-    padding: 0px .4em 0px .4em;
-}
+        font-size: 1.1em;
+        color: #666;
+        text-decoration: none;
+        padding: 0px .4em 0px .4em;
+    }
+
         div.pager a:hover {
-    background-color: silver;
-}
+            background-color: silver;
+        }
+
         div.pager a.selected {
-    background-color: #353535;
-    color: white;
+            background-color: #353535;
+            color: white;
+        }
+
+div#categories a {
+    font: bold 1.1em "Arial Narrow","Franklin Gothic Medium",Arial;
+    display: block;
+    text-decoration: none;
+    padding: .6em;
+    color: black;
+    border-bottom: 1px solid silver;
 }
+div#categories a.selected {background-color: #666; color:white;}
+div#categories a:hover {background-color:#CCC;}
+div#categories a.selected:hover {background-color: #666;}
