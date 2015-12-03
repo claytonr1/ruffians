@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listing.aspx.cs" 
     MasterPageFile="~/Pages/Store.Master"
     Inherits="CDRSportsStore.Pages.Listing" %>
+<%@ Import Namespace="System.Web.Routing" %>
 
 
 
@@ -20,7 +21,8 @@
     <div class="pager">
         <% for (int i = 1; i <= MaxPage; i++)
            {
-               Response.Write(string.Format("<a href='/Pages/Listing.aspx?page={0}' {1}>{2}</a>", i, i == CurrentPage ? "class='selected'" : "", i));
+               string path = RouteTable.Routes.GetVirtualPath(null, null, new RouteValueDictionary() { { "page", i } }).VirtualPath;
+               Response.Write(string.Format("<a href='{0}' {1}>{2}</a>", path, i == CurrentPage ? "class='selected'" : "", i));
            }
             
         %>
