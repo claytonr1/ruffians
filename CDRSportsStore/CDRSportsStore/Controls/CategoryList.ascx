@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CategoryList.ascx.cs" Inherits="CDRSportsStore.Controls.CategoryList" %>
-<%@ =CreateHomeLinkHtml() %>
+<%=CreateHomeLinkHtml() %>
 
 <% foreach (string cat in GetCategories())
    {
