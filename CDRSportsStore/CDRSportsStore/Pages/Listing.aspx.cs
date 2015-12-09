@@ -20,7 +20,7 @@ namespace CDRSportsStore.Pages
 
         }
 
-        protected IEnumerable<Product> GetProducts()
+        public IEnumerable<Product> GetProducts()
         {
             return FilterProducts()
                 .OrderBy(p => p.ProductID)
