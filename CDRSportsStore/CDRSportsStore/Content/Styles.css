@@ -54,6 +54,10 @@ div.item {
         font-size: 1.1em;
         margin: .4em 0px 0px 0px;
     }
+ 
+    div.item button {
+    color:white; background-color: #333; border: 1px solid black; float: right;
+}
 
 div.pager {
     text-align: right;
@@ -91,3 +95,5 @@ div#categories a {
 div#categories a.selected {background-color: #666; color:white;}
 div#categories a:hover {background-color:#CCC;}
 div#categories a.selected:hover {background-color: #666;}
+
+
