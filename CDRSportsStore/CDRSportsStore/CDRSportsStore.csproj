@@ -85,6 +85,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Respository\EFDbContext.cs" />
     <Compile Include="Models\Respository\Repository.cs" />
+    <Compile Include="Pages\Helpers\SessionHelper.cs" />
     <Compile Include="Pages\Listing.aspx.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\Admin\" />
-    <Folder Include="Pages\Helpers\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
