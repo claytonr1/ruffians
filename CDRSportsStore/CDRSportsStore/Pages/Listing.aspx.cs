@@ -4,8 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 using CDRSportsStore.Models;
 using CDRSportsStore.Models.Respository;
+
+using CDRSportsStore.Pages.Helpers;
+using System.Web.Routing;
 
 namespace CDRSportsStore.Pages
 {
@@ -17,7 +21,22 @@ namespace CDRSportsStore.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                int selectedProductID;
+                if (int.TryParse(Request.Form["add"],out selectedProductID))
+                {
+                    Product selectedProduct = repo.Products
+                        .Where(p => p.ProductID == selectedProductID).FirstOrDefault();
+                    if (selectedProduct != null)
+                    {
+                        SessionHelper.GetCart(Session).AddItem(selectedProduct, 1);
+                        SessionHelper.Set(Session, SessionKey.RETURN_URL, Request.RawUrl);
 
+                        Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "cart", null).VirtualPath);
+                    }
+                }
+            }
         }
 
         public IEnumerable<Product> GetProducts()
