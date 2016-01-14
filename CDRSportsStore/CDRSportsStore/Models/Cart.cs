@@ -10,7 +10,7 @@ namespace CDRSportsStore.Models
     {
         private List<CartLine> lineCollection  = new List<CartLine>();
 
-        public IEnumerable<CartLine> lines
+        public IEnumerable<CartLine> Lines
         {
             get { return lineCollection; }
         }
