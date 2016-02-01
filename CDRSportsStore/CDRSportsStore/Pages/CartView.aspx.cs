@@ -8,13 +8,30 @@ using System.Web.UI.WebControls;
 using CDRSportsStore.Models;
 using CDRSportsStore.Pages.Helpers;
 
+using CDRSportsStore.Models.Respository;
+
+
 namespace CDRSportsStore.Pages
 {
     public partial class CartView : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                Repository repo = new Repository();
+                int productID;
 
+                if(int.TryParse(Request.Form["remove"],out productID))
+                {
+                    Product productToRemove = repo.Products
+                        .Where(p => p.ProductID == productID).FirstOrDefault();
+                    if(productToRemove != null)
+                    {
+                        SessionHelper.GetCart(Session).RemoveLine(productToRemove);
+                    }
+                }
+            }
         }
 
         public IEnumerable<CartLine> GetCartLines()
