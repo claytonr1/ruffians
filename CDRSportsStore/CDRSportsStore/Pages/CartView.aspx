@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 <asp:Repeater ItemType="CDRSportsStore.Models.CartLine"
-                    SelectMethod="GetCartLines" runat="server">
+                    SelectMethod="GetCartLines" runat="server" EnableViewState="false">
                     <ItemTemplate>
                         <tr>
                             <td><%# Item.Quantity %></td>
