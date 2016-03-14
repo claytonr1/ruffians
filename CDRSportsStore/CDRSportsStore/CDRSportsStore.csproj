@@ -91,6 +91,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Respository\EFDbContext.cs" />
     <Compile Include="Models\Respository\Repository.cs" />
